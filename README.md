@@ -5,7 +5,7 @@
 </div>
 <br>
 
-![LMUnit Workflow](/assets/figure1.png)
+![LMUnit Workflow](https://github.com/ContextualAI/LMUnit/blob/main/assets/figure1.png)
 This repository provides code for evaluation and reproduction of our results in [LMUnit: Fine-grained Evaluation with Natural Language Unit Tests](https://arxiv.org/abs/2412.13091).
 
 

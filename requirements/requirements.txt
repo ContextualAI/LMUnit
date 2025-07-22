@@ -1,0 +1,7 @@
+transformers
+vllm
+loguru
+pandas
+datasets
+numpy
+scipy

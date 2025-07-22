@@ -1,0 +1,95 @@
+[tool.black]
+line-length = 88
+target-version = ['py310']
+exclude = '''
+(
+/(
+  | _build         # Exclude common directories
+  | \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | buck-out
+  | build
+  | dist
+  | venv           # Exclude venv directory
+)/
+)
+'''
+
+[tool.ruff]
+# Exclude directories
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "nbs",  # Exclude notebooks folder
+    "__pycache__",
+]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# Assume Python 3.8+
+target-version = "py38"
+
+[tool.ruff.lint]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+# Plus additional useful rules
+ignore = ["E501", "E203","F403","F405"]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+
+
+[tool.ruff.lint.per-file-ignores]
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*.py" = [
+    "S101",
+    "PLR2004",
+    "TID252",
+]
+
+# Flake8 configuration for compatibility
+[tool.flake8]
+max-line-length = 88
+extend-ignore = [
+    "E203",  # whitespace before ':'
+    "E501",  # line too long (handled by ruff/black)
+    "W503",  # line break before binary operator
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg-info",
+    ".venv",
+    "venv",
+    "nbs",  # Exclude notebooks folder
+]
+per-file-ignores = [
+    "__init__.py:F401",  # Allow unused imports in __init__.py
+] 
